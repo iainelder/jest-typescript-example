@@ -126,7 +126,7 @@ Thanks to Ivan Dimitrijevic, who posted on [Medium][dimi] with the simplest set 
 
 As he says, "When you google about Jest you will find that its popularity lies in the fact that requires zero setup.". As he shows, this is false.
 
-Thanks to Alex Dan, who shared a video tutorial on [YouTube][concise] of how to write tests for AWS CDK using Jest.
+Thanks to Alex Dan, who shared a video tutorial on [YouTube][concise] of how to write tests for AWS CDK using Jest. CDK is what compels me to use TypeScript. He shared a general tip to add the simplest possible sanity test to check that the dependencies are working.
 
 As he says, "No code is the best code". As we know, this is deeply true.
 
