@@ -12,7 +12,7 @@ npm install --save-dev jest ts-jest @types/jest
 npx ts-jest config:init
 ```
 
-Use VS Code to set Jest as the standard test runner.
+Use VS Code to set Jest as the standard test runner in `package.json`.
 
 ```json
 "scripts": {
@@ -42,7 +42,7 @@ In /tmp/dir.Om9
 Pattern:  - 0 matches
 ```
 
-Use VS Code to create a sanity test that `true` is "truthy".
+Use VS Code to create a sanity test that `true` is "truthy" in `index.test.ts`.
 
 ```ts
 describe("describe1", () => {
@@ -53,7 +53,7 @@ describe("describe1", () => {
 ```
 
 ```bash
-code index.ts
+code index.test.ts
 npm run test
 ```
 
@@ -76,7 +76,7 @@ Time:        1.465 s
 Ran all test suites.
 ```
 
-Use VS Code to create an `add` function and test that `1+1=2`.
+Use VS Code to create an `add` function in `index.ts`and test that `1+1=2` in `index.test.ts`.
 
 ```ts
 export function sum(a: number, b: number): number {
