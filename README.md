@@ -1,5 +1,7 @@
 # Minimal example to make Jest work in TypeScript
 
+## To make from scratch
+
 Use Node 20. You can install it using [nvm][nvm].
 
 Make a new directory and run these commands in it in Bash.
@@ -7,8 +9,19 @@ Make a new directory and run these commands in it in Bash.
 ```bash
 npm i --save-dev typescript
 npm install --save-dev jest ts-jest @types/jest
-code package.json
 npx ts-jest config:init
+```
+
+Use VS Code to set Jest as the standard test runner.
+
+```json
+"scripts": {
+   "test": "jest"
+},
+```
+
+```bash
+code package.json
 npm run test
 ```
 
