@@ -8,26 +8,32 @@ Make a new directory and run these commands in it in Bash.
 
 ```bash
 npm i --save-dev typescript
-npm install --save-dev jest ts-jest @types/jest
+npm install --save-dev jest ts-jest @types/jest @tsconfig/node20
 npx ts-jest config:init
 ```
 
 Use VS Code to set Jest as the standard test runner in `package.json`.
 
 ```json
-"scripts": {
-   "test": "jest"
-},
+{
+  "scripts": {
+     "test": "jest"
+  }
+}
 ```
 
-```bash
-code package.json
-npm run test
+Use VS Code to add the community base configuration for TypeScript for Node 20 (TSConfig) in `tsconfig.json`.
+
+```json
+{
+    "extends": "@tsconfig/node20/tsconfig.json"
+}
 ```
 
 Jest fails because it finds no tests.
 
-```text
+```console
+$ npm run test
 
 > test
 > jest
@@ -52,14 +58,10 @@ describe("describe1", () => {
 })
 ```
 
-```bash
-code index.test.ts
-npm run test
-```
-
 Jest passes the test suite.
 
 ```text
+$ npm run test
 
 > test
 > jest
@@ -76,13 +78,15 @@ Time:        1.465 s
 Ran all test suites.
 ```
 
-Use VS Code to create an `add` function in `index.ts`and test that `1+1=2` in `index.test.ts`.
+Use VS Code to create an `add` function in `index.ts`.
 
 ```ts
 export function sum(a: number, b: number): number {
     return a + b;
 }
 ```
+
+And add a test that `1+1=2` in `index.test.ts`.
 
 ```ts
 import { sum } from './index'
@@ -98,12 +102,11 @@ describe("describe1", () => {
 })
 ```
 
-```bash
-code index.test.ts
-npm run test
-```
+Jest passes both tests.
 
 ```text
+$ npm run test
+
 > test
 > jest
 
@@ -122,6 +125,8 @@ Ran all test suites.
 
 ## Acknowledgements
 
+Thanks to Felix Owino, who shared a repo like this and steps to create it on [Medium][felix]. Felix's step-by-step instructions didn't work for me, although I could run his example repo without modifications. From his post I learned about the TSConfig bases that I need to get VS Code to understand Jest's magic global imports.
+
 Thanks to Ivan Dimitrijevic, who posted on [Medium][dimi] with the simplest set of steps I could find that actually worked for me.
 
 As he says, "When you google about Jest you will find that its popularity lies in the fact that requires zero setup.". As he shows, this is false.
@@ -134,4 +139,5 @@ As he says, "No code is the best code". As we know, this is deeply true.
 
 [concise]: https://www.youtube.com/watch?v=b6p25GzGsAE
 [dimi]: https://medium.com/@dimi_2011/tdd-unit-testing-typescript-project-with-jest-2557e8b84414
+[felix]: https://dev.to/ghostaram/configuring-jest-for-typescript-unit-tests-4iag
 [nvm]: https://github.com/nvm-sh/nvm
